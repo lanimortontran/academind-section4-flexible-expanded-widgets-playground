@@ -91,7 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Flexible(
-            fit: FlexFit.tight,
+            // Still takes up the full amount of space available, but the child content is not forced to fill that space.
+            // Therefore, whitespace might appear around the child widget.
+            // There is extra space spread across all the child items because of the parent Row mainAxisAlignment.spaceAround.
+            fit: FlexFit.loose,
             child: Container(
               height: 100,
               child: Text('Item 3'),
