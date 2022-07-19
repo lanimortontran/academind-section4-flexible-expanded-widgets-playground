@@ -80,8 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text('Item 1'), // Only uses the amount of space needed to fit the child's content
             color: Colors.red,
           ),
-          Flexible(
-            fit: FlexFit.tight, // Forces child (Container) to fill the available space
+          Expanded(
+            // Expanded is the same as Flexible with FlexFit.tight
+            // fit: FlexFit.tight, // Forces child (Container) to fill the available space
             flex: 2, // Takes up twice the amount of space as the widget below with default flex:1
             child: Container(
               height: 100,
