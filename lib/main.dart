@@ -76,18 +76,27 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Container(
             height: 100,
-            child: Text('Item 1 - pretty big!'),
+            // child: Text('Item 1 - pretty big!'),
+            child: Text('Item 1'), // Only uses the amount of space needed to fit the child's content
             color: Colors.red,
           ),
-          Container(
-            height: 100,
-            child: Text('Item 2'),
-            color: Colors.blue,
+          Flexible(
+            fit: FlexFit.tight, // Forces child (Container) to fill the available space
+            flex: 2, // Takes up twice the amount of space as the widget below with default flex:1
+            child: Container(
+              height: 100,
+              width: 100, // Ignored when wrapped with Flexible parent
+              child: Text('Item 2'),
+              color: Colors.blue,
+            ),
           ),
-          Container(
-            height: 100,
-            child: Text('Item 3'),
-            color: Colors.orange,
+          Flexible(
+            fit: FlexFit.tight,
+            child: Container(
+              height: 100,
+              child: Text('Item 3'),
+              color: Colors.orange,
+            ),
           ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
